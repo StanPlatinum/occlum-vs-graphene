@@ -1,0 +1,15 @@
+includes:
+  - base.yaml
+# fish
+targets:
+  - target: /bin
+    # copy bins
+    copy:
+      - files:
+        - ../pipe_throughput
+  
+  - target: /
+    # copy bins
+    copy:
+      - files:
+        - ../dev_null

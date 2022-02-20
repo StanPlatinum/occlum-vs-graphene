@@ -1,0 +1,16 @@
+includes:
+  - base.yaml
+# fish
+targets:
+  - target: /bin
+    # copy bins
+    copy:
+      - files:
+        - ../spawn_child
+  
+  - target: /
+    # copy bins
+    copy:
+      - files:
+        - ../spawn_victim
+        - /opt/occlum/toolchains/busybox/musl/busybox

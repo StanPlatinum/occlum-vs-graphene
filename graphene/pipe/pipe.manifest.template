@@ -1,0 +1,38 @@
+# Curl manifest file example
+
+loader.preload = "file:{{ graphene.libos }}"
+libos.entrypoint = "{{ app_dir }}/pipe"
+loader.log_level = "{{ log_level }}"
+
+loader.env.LD_LIBRARY_PATH = "/lib:{{ arch_libdir }}:/usr/{{ arch_libdir }}"
+loader.env.HOME = "{{ home }}"
+
+loader.insecure__use_cmdline_argv = true
+
+fs.mount.lib.type = "chroot"
+fs.mount.lib.path = "/lib"
+fs.mount.lib.uri = "file:{{ graphene.runtimedir() }}"
+
+fs.mount.lib2.type = "chroot"
+fs.mount.lib2.path = "{{ arch_libdir }}"
+fs.mount.lib2.uri = "file:{{ arch_libdir }}"
+
+fs.mount.lib3.type = "chroot"
+fs.mount.lib3.path = "/usr{{ arch_libdir }}"
+fs.mount.lib3.uri = "file:/usr/{{ arch_libdir }}"
+
+fs.mount.app.type = "chroot"
+fs.mount.app.path = "{{ app_dir }}"
+fs.mount.app.uri = "file:{{ app_dir }}"
+
+sgx.enclave_size = "256M"
+sgx.thread_num = 6
+
+
+sgx.trusted_files = [
+  "file:{{ app_dir }}/pipe",
+  "file:dev_null",
+  "file:{{ graphene.runtimedir() }}",
+  "file:{{ arch_libdir }}/",
+  "file:/usr/{{ arch_libdir }}/",
+]
