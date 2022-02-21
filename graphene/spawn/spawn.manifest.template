@@ -25,7 +25,7 @@ fs.mount.app.type = "chroot"
 fs.mount.app.path = "{{ app_dir }}"
 fs.mount.app.uri = "file:{{ app_dir }}"
 
-sgx.enclave_size = "4096M"
+sgx.enclave_size = "8192M"
 sgx.thread_num = 4
 
 sgx.trusted_files = [

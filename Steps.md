@@ -15,7 +15,7 @@
 You will be in a occlum container instance.
 
 ```
-cd /root/reproduce-asplos20/bench/
+cd /root/occlum/
 ```
 
 You will see `pipe` and `spawn` among those examples.

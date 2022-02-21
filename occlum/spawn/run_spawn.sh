@@ -8,9 +8,9 @@ rm -rf occlum-instance
 occlum new occlum-instance
 cd occlum-instance
 
-new_json="$(jq '.resource_limits.user_space_size = "4096MB" |
-        .process.default_heap_size = "4KB" |
-        .process.default_stack_size = "4KB" |
+new_json="$(jq '.resource_limits.user_space_size = "8192MB" |
+        .process.default_heap_size = "128KB" |
+        .process.default_stack_size = "128KB" |
         .env.default = [ "OCCLUM=yes"]' Occlum.json)" && \
     echo "${new_json}" > Occlum.json
 
