@@ -1,6 +1,6 @@
-## Usage
+Overall, Occlum has better performance over Gramine/Graphene-SGX on process creation and IPC.
 
-This repo is for code backup. 
+## How to run these tests
 
 
 `run_*.sh` are for runing Occlum/Graphene instances, respectively.
